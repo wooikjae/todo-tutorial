@@ -8,7 +8,7 @@ import {
   PRIORITY_META,
   type Todo,
 } from "@/lib/types";
-import { Button } from "@/components/ui/button";
+import { RoundButton } from "@/components/round-button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -118,7 +118,7 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemProps) {
         {priority.label}
       </span>
 
-      <Button
+      <RoundButton
         type="button"
         variant="ghost"
         size="icon"
@@ -127,7 +127,7 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemProps) {
         aria-label="삭제"
       >
         <XIcon />
-      </Button>
+      </RoundButton>
     </li>
   );
 }

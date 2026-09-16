@@ -8,7 +8,7 @@ import {
   type Category,
   type Priority,
 } from "@/lib/types";
-import { Button } from "@/components/ui/button";
+import { RoundButton } from "@/components/round-button";
 import { Input } from "@/components/ui/input";
 import {
   Card,
@@ -71,7 +71,7 @@ export function TodoInput({ onAdd }: TodoInputProps) {
             {PRIORITIES.map((item) => {
               const selected = item.value === priority;
               return (
-                <Button
+                <RoundButton
                   key={item.value}
                   type="button"
                   size="sm"
@@ -81,13 +81,13 @@ export function TodoInput({ onAdd }: TodoInputProps) {
                   onClick={() => setPriority(item.value)}
                 >
                   {item.label}
-                </Button>
+                </RoundButton>
               );
             })}
           </div>
 
           <div role="radiogroup" aria-label="카테고리" className="flex gap-1">
-            <Button
+            <RoundButton
               type="button"
               size="sm"
               variant={category === undefined ? "default" : "outline"}
@@ -96,11 +96,11 @@ export function TodoInput({ onAdd }: TodoInputProps) {
               onClick={() => setCategory(undefined)}
             >
               없음
-            </Button>
+            </RoundButton>
             {CATEGORIES.map((item) => {
               const selected = item.value === category;
               return (
-                <Button
+                <RoundButton
                   key={item.value}
                   type="button"
                   size="sm"
@@ -110,16 +110,16 @@ export function TodoInput({ onAdd }: TodoInputProps) {
                   onClick={() => setCategory(item.value)}
                 >
                   {item.label}
-                </Button>
+                </RoundButton>
               );
             })}
           </div>
         </CardContent>
 
         <CardFooter>
-          <Button type="submit" className="w-full">
+          <RoundButton type="submit" className="w-full">
             추가
-          </Button>
+          </RoundButton>
         </CardFooter>
       </Card>
     </form>
