@@ -6,8 +6,10 @@
 
 할 일을 추가·수정·삭제하며 관리하는 간단한 Todo 앱입니다.
 
-- 할 일 추가 / 수정 / 완료 처리
-- 카테고리별 필터링, 검색, 정렬
+- 할 일 추가 / 수정 / 삭제 / 완료 처리
+- 우선순위(높음·보통·낮음), 마감일, 카테고리(업무·개인·쇼핑) 지정
+- 카테고리별 필터링, 검색, 정렬(생성일순 · 이름순 · 마감일순)
+- `localStorage` 기반 데이터 저장
 - 다크 모드 지원 (`d` 키로 토글)
 
 ## 관련 링크
@@ -43,14 +45,16 @@ bun run lint       # ESLint
 bun run typecheck  # tsc --noEmit
 bun run format     # Prettier 포맷팅
 bun run test       # 테스트 실행 (vitest)
+bun run test:watch # 테스트 watch 모드
 ```
 
-## 챕터별 시작 브랜치
+## 프로젝트 구조
 
-각 레슨은 시작 시점의 코드 상태를 브랜치로 제공합니다. 레슨 본문에서 안내하는 브랜치로 전환한 뒤 따라가시면 됩니다.
-
-```shell
-git checkout ch02-03
+```
+app/              # Next.js App Router (page.tsx, layout.tsx)
+components/       # Todo 관련 컴포넌트 (components/ui 는 shadcn/ui)
+hooks/            # useTodos 등 커스텀 훅
+lib/              # 타입 정의, 유틸 함수
 ```
 
 ## 컴포넌트 추가
