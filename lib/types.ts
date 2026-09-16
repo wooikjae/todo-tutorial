@@ -15,7 +15,7 @@ export interface Todo {
 
 export const DEFAULT_PRIORITY: Priority = "medium";
 
-export interface PriorityMeta {
+interface PriorityMeta {
   value: Priority;
   label: string;
   /** 목록 뱃지에 적용할 Tailwind 색상 클래스 */
@@ -48,7 +48,7 @@ export const PRIORITY_META: Record<Priority, PriorityMeta> = Object.fromEntries(
 
 export type Category = "work" | "personal" | "shopping";
 
-export interface CategoryMeta {
+interface CategoryMeta {
   value: Category;
   label: string;
   /** 목록 뱃지에 적용할 Tailwind 색상 클래스 */
